@@ -27,3 +27,7 @@ Route::get('/displayCourses','HomeController@displayCourses');
 
 
 Route::post('bookCourse','HomeController@bookCourse');
+
+Route::get('checkOut','HomeController@checkOut')->name('checkOut');
+
+Route::post('paymentProcesss','HomeController@paymentProcesss');

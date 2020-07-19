@@ -8,7 +8,8 @@
   .tour_pack_content
   {
     margin-top: 4%;
-  }  
+  } 
+   
 </style>
 @endsection
 @section('body')

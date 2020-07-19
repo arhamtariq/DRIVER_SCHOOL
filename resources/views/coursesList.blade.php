@@ -559,7 +559,14 @@
         </div>
     </section>
     <!-- bootrsap modal -->
-    <div class="modal fade" id="myModal" role="dialog">
+   
+
+    <!--  -->
+    <!--================Blog Area =================-->
+
+   @include('footer')
+    <!--::footer_part end::-->
+<div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -630,13 +637,6 @@
       </div>
     </div>
   </div>
-
-    <!--  -->
-    <!--================Blog Area =================-->
-
-   @include('footer')
-    <!--::footer_part end::-->
-
     <!-- jquery plugins here-->
     <!-- jquery -->
     <script src="js/jquery-1.12.1.min.js"></script>
