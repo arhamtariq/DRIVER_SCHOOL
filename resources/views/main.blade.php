@@ -1,6 +1,14 @@
 @extends('header')
 @section('css')
+<!-- https://www.pexels.com/search/drivering/ 
+https://www.freepik.com/free-photo/happy-woman-looking-man-driving-car_2751470.htm#page=1&query=driving&position=17-->
 <style>
+.notransition {
+ /* -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;*/
+}
   .owl-carousel .owl-item img
   {
     display: none;
@@ -9,7 +17,38 @@
   {
     margin-top: 4%;
   } 
-   
+   .search_form{
+      
+        /*top: -391px !important;*/
+    }
+.banner_part{
+  
+    background-image:  url(/img/wal9.jpg);
+    background-color: #2F5496;
+    transition: none !important; 
+     transition-delay: 0s !important;
+         height: 900px;
+   /*  transition: background-image 0s ease-in-out;*/
+   } 
+   .banner_part:after {
+
+    background-image:none !important;    
+    }
+    .search_your_country .search_form {
+            background-color:transparent;
+            top: -360px;
+    }
+    .search_your_country .search_form .search_btn {
+    background-color: #FF0000;
+    }
+    .search_your_country{
+        background-color: initial;
+    }
+    .footer_part {
+    
+    top: -91px;
+}
+
 </style>
 @endsection
 @section('body')
@@ -17,19 +56,32 @@
     <!-- Header part end-->
 @include('navBar')
     <!-- banner part start-->
-    <section class="banner_part">
+    <section class="banner_part notransition">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7">
                     <div class="banner_text">
                         <div class="banner_text_iner">
-                            <h5>EARNER'S BAYr</h5>
-                            <h1>Driving School</h1>
+                            <h5>EARNER'S BAY</h5>
+                            <marquee width="100%" direction="up" height="100px" style="color: #FF0000;font-size: 22px;font-weight: 800;" scrollamount="2">
+                            WELCOME TO  Learner's Bay  DRIVING SCHOOL
+
+                            <br>Fully Qualified Instructors
+                            <br>Flexibility
+                            <br>Multilingual Instructors 
+                            <br>Free theory test app
+                            <br>Range of packages to suite your individual need
+                            <br>Free access to lessons notes, books and study 
+
+
+                            </marquee>
+                           <!--  <h1>Driving School</h1> -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </section>
     <!-- banner part start-->
 
@@ -67,7 +119,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="display:none">
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_donation_item">
                        <!--  <img src="img/icon/money_bag.svg" alt="#"> -->
@@ -94,8 +146,7 @@
                 </div>
             </div>
         </div>
-        <img src="img/animate_icon/Shape-1.png" alt="" class="feature_icon_1">
-        <img src="img/animate_icon/Shape-2.png" alt="" class="feature_icon_2">
+      
     </section>
     <!-- banner part start-->
 
@@ -158,7 +209,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-5">
                     <div class="section_tittle text-center">
-                        <img src="img/section_tittle_img.png" alt="">
+                        <img src="img/section_tittle_img_2.png" alt="" style="max-width:50%">
                         <h2>Our Services <!-- <span>place</span> --> </h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit 
                         sed  do eiusmod tempor incididunt ut</p>
@@ -168,21 +219,21 @@
             <div class="row justify-content-center">
                 <div class="col-lg-4 col-sm-6 ">
                     <div class="single_popular_place">
-                        <img src="img/icon/learn_drive.png" alt="">
+                        <img src="img/icon/learn_drive_2.svg" alt="">
                         <h4>LEARN TO DRIVE</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor</p>
                         <a href="#" class="btn1">Join Now</a>
                     </div>
                 </div><div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
-                        <img src="img/icon/learn_drive.png" alt="">
+                        <img src="img/icon/courses_title.svg" alt="">
                         <h4>DISCOVER OUR COURSES</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor</p>
                         <a href="#" class="btn1">View All</a>
                     </div>
                 </div><div class="col-lg-4 col-sm-6">
                     <div class="single_popular_place">
-                        <img src="img/icon/learn_drive.png" alt="">
+                        <img src="img/icon/instructor.svg" alt="">
                         <h4>Become an instructor</h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor</p>
                         <a href="#" class="btn1">Join now</a>
@@ -202,7 +253,7 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-8 col-xl-6">
                                 <div class="place_details_content">
-                                    <img src="img/section_tittle_img.png" alt="#">
+                                    <img src="img/section_tittle_img_2.png" alt="#" style="max-width: 30%">
                                     <h2>Amazing tour</h2>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do
                                         eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
@@ -311,11 +362,11 @@
                 </div>
                 <div class="col-lg-5 col-xl-3 offset-lg-1 col-sm-6">
                     <div class="tour_pack_content">
-                        <img src="img/section_tittle_img.png" alt="">
-                        <h2>tour package</h2>
+                        <img src="img/section_tittle_img_2.png" alt="" style="max-width: 30%">
+                        <h2>Gallery</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit 
                         sed  do eiusmod tempor incididunt ut</p>
-                        <a href="#" class="btn_1">join now</a>
+                        <a href="#" class="btn_1">View Gallery</a>
                     </div>
                 </div>
             </div>
@@ -477,6 +528,43 @@ function searchPostCode()
     window.location.href="/pickup-location?post_code="+$('#post_codes').val()+"";
     
 }  
+
+//setInterval(update, 5000);
+var i =0;
+//setInterval(update, 5000);
+var i =0;
+function update(){
+if(i==0)
+{
+ $('.banner_part').css('background-image','url(/img/wal3.jpg)');
+ i = i+1;
+ }
+ else if(i==1)
+ {
+
+ $('.banner_part').css('background-image','url(/img/wal4.jpg)');
+i = i+1;
+ }
+ else
+ {
+ $('.banner_part').css('background-image','url(/img/wal5.jpg)');
+i = 0;
+ }
+
+
+}
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5d5628f5eb1a6b0be607c315/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+
+<!--End of Tawk.to Script-->
   </script>
 @endpush
 
+<!--  -->

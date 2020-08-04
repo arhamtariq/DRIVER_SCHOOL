@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="css/slick.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
     .breadcrumb.breadcrumb_bg
     {
@@ -33,6 +35,14 @@
     #myModal
     {
         z-index: 16111;
+    }
+    .blog_part .single_blog_part {
+    background-color: #ffcc00;
+
+    }
+    .blog_text
+    {
+        margin-left: 2%;
     }
     </style>
 </head>
@@ -75,115 +85,47 @@
                     <div class="section_tittle">
                  <!--        <img src="img/section_tittle_img.png" alt=""> -->
                         <h2>List of Courses</h2>
-                        <p>Offered by <b>{{$code}}</b> </p>
+                    
+                        <p>Offered by <b>{{$courses_info[0]->driverName}}</b> </p>
                     </div>
                 </div>
             </div>
             <div class="row">
+            @foreach($courses_info as $info)    
                 <div class="col-lg-4 col-sm-6">
-                    <div class="single_blog_part">
-                         <img src="img/blog/first_instructor.png" alt="">
+                    <div class="single_blog_part" >
+                          
                         <div class="blog_text">
-                            <h2>Luxerious Car Rental</h2>
+                            <h2 style="color:#fff">{{$info->name}}</h2>
                             
-                            <a href="#" class="genric-btn success circle arrow" data-toggle="modal" data-target="#myModal">Book Now<span class="lnr lnr-arrow-right"></span></a>
+                           
                             <!-- <a href="javascript:null()" class="genric-btn danger circle arrow" onclick="redirectToCourses()">View Courses<span class="lnr lnr-arrow-right"></span></a> -->
-                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna 
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                            <ul>
+                             <ul>
                                 <li>
-                                    <i class="ti-calendar"></i>
-                                    <p>13th Dec</p>
+                                    <i class="ti-timer"></i>
+                                    <p>{{$info->duration}} Hours</p>
                                 </li>
                                 <li>
-                                    <i class="ti-heart"></i>
-                                    <p>15</p>
+                                    <i class="fa fa-gbp" aria-hidden="true"></i>
+                                   <!-- 
+                                    -->
+                                    <p>{{$info->price}}</p>
                                 </li>
                                 <li>
-                                    <i class="far fa-comment-dots"></i>
-                                    <p>10</p>
-                                </li>
-                            </ul> 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_blog_part">
-                          <img src="img/blog/first_instructor.png" alt="">
-                        <div class="blog_text">
-                            <h2>Luxerious Car Rental</h2>
-                            
-                            <a href="#" class="genric-btn success circle arrow">Book Now<span class="lnr lnr-arrow-right"></span></a>
-                           <!--  <a href="#" class="genric-btn danger circle arrow">View Courses<span class="lnr lnr-arrow-right"></span></a> -->
-                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna 
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                            <ul>
-                                <li>
-                                    <i class="ti-calendar"></i>
-                                    <p>13th Dec</p>
-                                </li>
-                                <li>
-                                    <i class="ti-heart"></i>
-                                    <p>15</p>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment-dots"></i>
-                                    <p>10</p>
-                                </li>
-                            </ul> 
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-lg-4 col-sm-6">
-                    <div class="single_blog_part">
-                        <img src="img/blog/first_instructor.png" alt="">
-                        <div class="blog_text">
-                            <h2>Luxerious Car Rental</h2>
-                            
-                            <a href="#" class="genric-btn success circle arrow">Book Now<span class="lnr lnr-arrow-right"></span></a>
-                           <!--  <a href="#" class="genric-btn danger circle arrow">View Courses<span class="lnr lnr-arrow-right"></span></a> -->
-                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna 
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                            <ul>
-                                <li>
-                                    <i class="ti-calendar"></i>
-                                    <p>13th Dec</p>
-                                </li>
-                                <li>
-                                    <i class="ti-heart"></i>
-                                    <p>15</p>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment-dots"></i>
-                                    <p>10</p>
+                                  <!--   <i class="far fa-comment-dots"></i>
+                                    <p>10</p> -->
                                 </li>
                             </ul>
+                             <p>{{$info->description}}</p>
+                           
+                         <a href="#" class="genric-btn success circle arrow" data-toggle="modal" data-target="#myModal"
+                         onclick="assignCourseId({{$info->id}})">Book Now<span class="lnr lnr-arrow-right"></span></a>     
                         </div>
                     </div>
                 </div>
-                <nav class="blog-pagination justify-content-center d-flex">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Previous">
-                                        <i class="ti-angle-left"></i>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link">1</a>
-                                </li>
-                                <li class="page-item active">
-                                    <a href="#" class="page-link">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Next">
-                                        <i class="ti-angle-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
+               @endforeach 
+                <!--  -->
+               
                 <!-- <div class="col-lg-4 col-sm-6">
                     <div class="single_blog_part">
                         <img src="img/blog/blog_2.png" alt="">
@@ -238,6 +180,26 @@
         </div> -->
         <img src="img/overlay_1.png" alt="#" class="blog_img">
     </section>
+     <nav class="blog-pagination justify-content-center d-flex">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a href="#" class="page-link" aria-label="Previous">
+                                        <i class="ti-angle-left"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link">1</a>
+                                </li>
+                                <li class="page-item active">
+                                    <a href="#" class="page-link">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link" aria-label="Next">
+                                        <i class="ti-angle-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
     <section class="blog_area padding_top" style="display:none">
         <div class="container">
             <div class="row">
@@ -576,6 +538,8 @@
         <div class="modal-body">
         <form method="post" action="/bookCourse" onsubmit="validate();return false;" id="bookingForm">
         @csrf 
+        <input type="hidden" name="driverID" value={{$driver_id}}>
+        <input type="hidden" name="courseID" id="courseID" >
         <div class="col-lg-6">
         <div class="alert alert-success" style="display:none" id="message">
          
@@ -602,6 +566,10 @@
         <input type="text" name="last_name" placeholder="Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required="" class="single-input">
         </div>
         <div class="col-lg-6">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" required="" class="single-input">
+        </div>
+        <div class="col-lg-6">
         <label>Telephone</label>
         <input type="text" name="telephone" placeholder="Telephone" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Phone Number'" required="" class="single-input">
         </div>
@@ -625,12 +593,13 @@
          <div class="col-lg-6">
         <pre>  </pre>    
         <div class="radio">
-        <label><input type="radio" name="terms_status" >Do you agree with our <A href="#">Terms & Conditions</a>?</label>
+
+        <label><input type="radio" name="terms_status" >Do you agree with our <A href="/Learnersbay_Terms_and_Conditions_inclusive_of_privacy_policy.pdf" target="_blank">Terms & Conditions</a>?</label>
         </div>
           <!-- <p>This is a large modal.</p> -->
         </div>
         <div class="modal-footer">
-        <button type="submit" class="btn btn-success" >Pay Now</button>
+        <button type="submit" class="btn btn-success" >Submit</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
     </form>
@@ -718,6 +687,12 @@ function isFutureDate(idate){
 
     idate = new Date(idate[2], idate[1] - 1, idate[0]).getTime();
     return (today - idate) < 0;*/
+}
+function assignCourseId($id)
+{
+    $('#courseID').val($id);
+    //alert($id);
+
 }
 
     </script>

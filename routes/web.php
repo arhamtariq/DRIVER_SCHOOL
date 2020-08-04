@@ -18,6 +18,9 @@ Route::get('/','HomeController@main');
 /*function () {
     return view('main');
 });*/
+Route::get('/imageGallery', function () {
+    return view('imageGallery');
+});
 Route::get('/pickup-location','HomeController@pickupLocation');
 
 Route::get('/getPostalCodes','HomeController@getPostalCodes')->name('getPostalCodes');

@@ -1,9 +1,37 @@
+<style>
+    .main_menu.home_menu
+    {
+        background-color: #2F5496;
+    }
+    .btn_1
+    {
+     background-color: #FF0000;
+    }
+    .btn_1:hover {
+    color: #FF0000;
+    border: 2px solid #FF0000;
+    }
+    .main_menu .main-menu-item ul li .nav-link:hover {
+    color: #FF0000;
+    }
+    .logo_style {
+    max-width: 61%;
+    border-radius: 15%;
+   }
+   .dropdown .dropdown-menu .dropdown-item {
+     background-color: #FF0000;
+   }
+.dropdown .dropdown-menu {
+     background-color: #FF0000;
+
+}
+</style>
 <header class="main_menu home_menu">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+                        <a class="navbar-brand" href="index.html"> <img src="img/image002.png" alt="logo" class="logo_style"> </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +46,10 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="about.html">about</a>
                                 </li>
-                            <!--     <li class="nav-item">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/imageGallery">Gallery</a>
+                                </li>
+                                                            <!--     <li class="nav-item">
                                     <a class="nav-link" href="packages.html">packages</a>
                                 </li> -->
                                 <li class="nav-item dropdown">
@@ -31,7 +62,7 @@
                                         <a class="dropdown-item" href="single-blog.html">Single blog</a>
                                     </div>
                                 </li>
-                                  <li class="nav-item dropdown">
+                                 <!--  <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Become an instructor
@@ -40,7 +71,7 @@
                                         <a class="dropdown-item" href="blog.html"> blog</a>
                                         <a class="dropdown-item" href="single-blog.html">Single blog</a>
                                     </div>
-                                </li>
+                                </li> -->
                                     <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

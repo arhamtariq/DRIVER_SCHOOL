@@ -6,6 +6,10 @@ var applicationId = "sandbox-sq0idb-Ena4sfxEyA1fl4qEyHGHog";
 // Set the location ID
 var locationId = "EYGN96S34E7S2";
 
+// new (remove if does not word)
+//credentials of army12ka4@gmail.com
+var applicationId ="sandbox-sq0idb-MOLBoebILwtvhu4GvF1Yxw";
+var locationId = "LE3QYVY9P6AZJ";
 
 function buildForm(form) {
   if (SqPaymentForm.isSupportedBrowser()) {

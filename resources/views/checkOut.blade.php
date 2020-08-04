@@ -216,19 +216,19 @@ fieldset {
    </pre>
    @include('messages')     
     <h2>Booking Details</h2>
-    <p>Instructor's Name <b>Ali</b></p>
-    <p>Appointment  Date <b>03/02/2019</b></p>          
+    <p>Instructor's Name <b>{{$order_details[0]['driverName']}}</b></p>
+    <p>Appointment  Date <b>{{$order_details[0]['fdd']}}</b></p>          
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Package Description</th>
+        <th>Package Name</th>
         <th>Total</th>
    
       </tr>
     </thead>
     <tbody>
-        <td>July</td>
-        <td>100$</td>
+        <td>{{$order_details[0]['courseName']}}</td>
+        <td> {{$order_details[0]['coursePrice']}} <span>&#163;</span></td>
      
       </tr>
     </tbody>

@@ -96,14 +96,17 @@
                 </div>
             </div>
             <div class="row">
+                @foreach($driving_info as $driver) 
                 <div class="col-lg-4 col-sm-6">
+
                     <div class="single_blog_part">
-                         <img src="img/blog/first_instructor.png" alt="">
+
+                         <img src="{{$driver->profilePicPath}}" alt="">
                         <div class="blog_text">
                             <h2>Luxerious Car Rental</h2>
                             
-                            <a href="#" class="genric-btn success circle arrow">View Profile<span class="lnr lnr-arrow-right"></span></a>
-                            <a href="javascript:null()" class="genric-btn danger circle arrow" onclick="redirectToCourses()">View Courses<span class="lnr lnr-arrow-right"></span></a>
+                            <a href="#" class="genric-btn success circle arrow">View Profiles<span class="lnr lnr-arrow-right"></span></a>
+                            <a href="javascript:null()" class="genric-btn danger circle arrow" onclick="redirectToCourses({{$driver->id}})">View Courses<span class="lnr lnr-arrow-right"></span></a>
                            <!--  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
                             sed do eiusmod tempor incididunt ut labore et dolore magna 
                             aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
@@ -124,82 +127,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_blog_part">
-                          <img src="img/blog/first_instructor.png" alt="">
-                        <div class="blog_text">
-                            <h2>Luxerious Car Rental</h2>
-                            
-                            <a href="#" class="genric-btn success circle arrow">View Profile<span class="lnr lnr-arrow-right"></span></a>
-                            <a href="#" class="genric-btn danger circle arrow">View Courses<span class="lnr lnr-arrow-right"></span></a>
-                           <!--  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna 
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                            <ul>
-                                <li>
-                                    <i class="ti-calendar"></i>
-                                    <p>13th Dec</p>
-                                </li>
-                                <li>
-                                    <i class="ti-heart"></i>
-                                    <p>15</p>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment-dots"></i>
-                                    <p>10</p>
-                                </li>
-                            </ul> -->
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-lg-4 col-sm-6">
-                    <div class="single_blog_part">
-                        <img src="img/blog/first_instructor.png" alt="">
-                        <div class="blog_text">
-                            <h2>Luxerious Car Rental</h2>
-                            
-                            <a href="#" class="genric-btn success circle arrow">View Profile<span class="lnr lnr-arrow-right"></span></a>
-                            <a href="#" class="genric-btn danger circle arrow">View Courses<span class="lnr lnr-arrow-right"></span></a>
-                           <!--  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                            sed do eiusmod tempor incididunt ut labore et dolore magna 
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-                            <ul>
-                                <li>
-                                    <i class="ti-calendar"></i>
-                                    <p>13th Dec</p>
-                                </li>
-                                <li>
-                                    <i class="ti-heart"></i>
-                                    <p>15</p>
-                                </li>
-                                <li>
-                                    <i class="far fa-comment-dots"></i>
-                                    <p>10</p>
-                                </li>
-                            </ul> -->
-                        </div>
-                    </div>
-                </div>
-                <nav class="blog-pagination justify-content-center d-flex">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Previous">
-                                        <i class="ti-angle-left"></i>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link">1</a>
-                                </li>
-                                <li class="page-item active">
-                                    <a href="#" class="page-link">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Next">
-                                        <i class="ti-angle-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
+                @endforeach
+
+                
+                
+               
+
+                       
                 <!-- <div class="col-lg-4 col-sm-6">
                     <div class="single_blog_part">
                         <img src="img/blog/blog_2.png" alt="">
@@ -254,6 +188,26 @@
         </div> -->
         <img src="img/overlay_1.png" alt="#" class="blog_img">
     </section>
+     <nav class="blog-pagination justify-content-center d-flex">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a href="#" class="page-link" aria-label="Previous">
+                                        <i class="ti-angle-left"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link">1</a>
+                                </li>
+                                <li class="page-item active">
+                                    <a href="#" class="page-link">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a href="#" class="page-link" aria-label="Next">
+                                        <i class="ti-angle-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
     <section class="blog_area padding_top" style="display:none">
         <div class="container">
             <div class="row">
@@ -608,9 +562,10 @@
     <script src="js/custom.js"></script>
 </body>
 <script type="text/javascript">
-   function redirectToCourses()
+   function redirectToCourses($id)
    {
-    window.location.href="/displayCourses";
+    //alert($id);
+    window.location.href="/displayCourses?driver_no="+$id+"";
    }
 </script>
 </html>
